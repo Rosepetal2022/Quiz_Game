@@ -39,7 +39,6 @@ startGame = () => {
 };
 
 getNextQuestion = () => {
-    questionCounter++;
     const questionIndex = Math.floor(Math.random()*gameQuestions.length);
     currentQuestion = availibleQuestions[questionIndex];
     questions.innerHTML = currentQuestion.question;
@@ -49,16 +48,33 @@ getNextQuestion = () => {
         choice.innerHTML = currentQuestion['choice'+ number];
     });
 
-    availibleQuestions.splice(questionIndex, 1);
+        
+    if (questionCounter > gameQuestions.length - 1) {
+        endGame()
+    } else
+    setTimeout( () => {
+        endGame();
+    }, 30000);
+
+    questionCounter++;
 };
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        console.log(selectedAnswer);
-        getNextQuestion();
+        
+        const rightOrWrong = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        console.log(rightOrWrong);
 
+        selectedChoice.classList.add(rightOrWrong);
+
+        setTimeout( () => {
+            selectedChoice.classList.remove(rightOrWrong);
+            getNextQuestion();
+        }, 1000);
+
+    
     });
 });
 
@@ -69,3 +85,5 @@ endGame = () => {
 }
 
 startGame()
+
+
