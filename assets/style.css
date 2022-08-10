@@ -18,18 +18,32 @@ header {
     padding-bottom: 10px;
 }
 
-.check-high-scores {
-    text-align: left;
-    padding-left: 20px;
-    color: blueviolet;
-}
 
 footer {
     background-color: aquamarine;
     text-align:center;
     margin-top: 0px;
     padding: 10px;
+}
 
+
+/* Start page styles*/
+.start-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+#start-btn {
+    padding: 10px;
+    margin: 10px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    
 }
 
 .container {
@@ -40,6 +54,7 @@ footer {
     padding: 10px 10px 0px 10px;
     box-shadow: 0 0 10px 1px;
     background-color: #D3D3D3;
+
 }
 
 .btn-grid {
@@ -72,4 +87,74 @@ footer {
 
 .correct {
     background-color: green;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+    color: blueviolet;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#hud-text {
+    font-size: 20px;
+    margin: 0px;
+    font-weight: bolder;
+}
+
+#hud-number {
+    margin: 0px;
+    font-size: 30px;
+}
+
+#hud-active-score {
+    margin: 0px;
+    font-size: 30px;
+}
+
+.end-container {
+    width: 800px;
+    max-width: 80%;
+    margin: 50px 50px 150px 50px;
+    border-radius: 5px;
+    padding: 10px 10px 0px 10px;
+    box-shadow: 0 0 10px 1px;
+    background-color: #D3D3D3;
+}
+
+#end-game-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+#input-text {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+#save-score-btn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: blueviolet;
+}
+
+#play-again-btn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: blueviolet;
+    color: white;
+}
+
+#start-scores {
+    text-decoration: none;
+    color: white;
 }

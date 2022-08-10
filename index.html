@@ -14,20 +14,29 @@
     <header>
         <h1>JavaScript Fundamentals Quiz</h1>
         <div id="hud">
-            <div id="hud-container">
-                <p class="hud-text">Question</p>
-                <p class="hud-high-scores">Check High Scores</p>
-                <h1 class="hud-score">Score</h1>
-
+            <div id="hud-question">
+                <h1 id= "hud-text">Question</h1>
+                <p id= "hud-number"></p>
+            </div>
+            <div id="hud-score">
+                <h1 id= "hud-text">Your Score</h1>
+                <p id="hud-active-score"></p>
+            </div>
+            <div id="hud-timer">
+                <h1 id= "hud-text">Timer</h1>
+                <p id="hud-active-timer"></p>
             </div>
         </div>
+
     </header>
 
     <main class="page-content">
+       
+
 
         <div class="container">
             <div id="question-container" class="question-container">
-                
+
                 <div id="questions">Question</div>
                 <div id="answer-button" class="btn-grid">
                     <button class="btn" type="submit" data-number="1">Choice 1</button>

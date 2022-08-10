@@ -1,11 +1,33 @@
 const questions = document.getElementById("questions");
 const choices = Array.from(document.getElementsByClassName("btn"));
+const questionCounterText = document.getElementById("hud-number");
+const activeScore = document.getElementById("hud-active-score");
+
 
 let currentQuestion = {}
 let answer = true
 let score = 0
 let questionCounter = 0
 let availibleQuestions = []
+
+const correctAnswer = 10
+const maxQuestions = 5
+
+let timeSecond = 100;
+const activeTimer = document.getElementById('hud-active-timer');
+
+activeTimer
+
+const countDown = setInterval (()=>{
+    timeSecond--;
+    activeTimer.innerHTML = timeSecond;
+    if (timeSecond === 0){
+        window.alert('You are out of time');
+        clearInterval(countDown);
+        
+    }
+}, 1000);
+
    
 
 let gameQuestions = [ 
@@ -24,10 +46,42 @@ let gameQuestions = [
         choice3: 'Math.floor()',
         choice4: 'Math.ran()',
         answer: 1
+    },
+    {
+        question: 'Which javaScript method would you use to add items into an array?',
+        choice1: '.push()',
+        choice2: '.pop()',
+        choice3: '.splice()',
+        choice4: '.add()',
+        answer: 1,
+    },
+    {
+        question: 'What would you use to assign a variable that CANNOT be reassigned within your code?',
+        choice1: 'let',
+        choice2: 'var',
+        choice3: 'java',
+        choice4: 'const',
+        answer: 4,
+    },
+    {
+        question: "What is an 'undfinded variable'?",
+        choice1: "Nothing, don't worry about it.",
+        choice2: 'A variable that is used within a function',
+        choice3: 'A variable that has not been assigned a value yet',
+        choice4: 'A variable that has been reassigned',
+        answer: 3,
+    },
+    {
+        question: 'If you were looking for a local variable, where would you find it?',
+        choice1: 'Within a function',
+        choice2: 'At the top of the page',
+        choice3: 'At the end of the page',
+        choice4: 'Inside another variable.',
+        answer: 1,
     }
 ]
 
-const correctAnswerScore = 10;
+
 
 startGame = () => {
     questionCounter = 0;
@@ -39,6 +93,14 @@ startGame = () => {
 };
 
 getNextQuestion = () => {
+    if (availibleQuestions.length === 0 || questionCounter > maxQuestions){
+        localStorage.setItem('mostRecentScore', score);
+        return window.location.assign('end.html');
+    };
+
+    questionCounter++;
+    questionCounterText.innerHTML = `${questionCounter-1}/${maxQuestions}`;
+    
     const questionIndex = Math.floor(Math.random()*gameQuestions.length);
     currentQuestion = availibleQuestions[questionIndex];
     questions.innerHTML = currentQuestion.question;
@@ -47,16 +109,7 @@ getNextQuestion = () => {
         const number = choice.dataset['number'];
         choice.innerHTML = currentQuestion['choice'+ number];
     });
-
-        
-    if (questionCounter > gameQuestions.length - 1) {
-        endGame()
-    } else
-    setTimeout( () => {
-        endGame();
-    }, 30000);
-
-    questionCounter++;
+    
 };
 
 choices.forEach(choice => {
@@ -66,6 +119,14 @@ choices.forEach(choice => {
         
         const rightOrWrong = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
         console.log(rightOrWrong);
+
+        if (rightOrWrong === 'correct') {
+            scoreCounter(correctAnswer);
+        };
+
+        if (rightOrWrong === 'incorrect') {
+            timeSecond-5;
+        };
 
         selectedChoice.classList.add(rightOrWrong);
 
@@ -78,11 +139,12 @@ choices.forEach(choice => {
     });
 });
 
-endGame = () => {
-    const lastQuestion = document.getElementById('question-container');
-    lastQuestion.innerHTML = ('Game Over');
+scoreCounter = num => {
+    score += num;
+    activeScore.innerHTML = score;
+};
 
-}
+
 
 startGame()
 

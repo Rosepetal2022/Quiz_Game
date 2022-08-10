@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <div class="end-container">
+        <div id="end-game">
+            <h1>Congratulations! Your final score is:</h1>
+            <h2 id="final-score"></h2>
+            <p id="score-total"></p>
+        </div>
+        <div>
+            <form id="end-game-form">
+                <input id="input-text"
+                type="text"
+                name="username"
+                placeholder="username">
+
+            <button
+             type="submit" 
+             id="save-score-btn"
+             onclick="saveScore(event)">
+             Save
+            </button>
+            <button type="submit" id="play-again-btn">
+                <a href="start.html" id="play-again-btn">Play Again</a>
+            </button>
+            <button type="submit">
+                <a href="highscores.html" id="start-scores">High Scores</a>
+            </button>
+        </form>
+    </div>
+       
+        
+    </div>
+    <script src="assets/end.js"></script>
+    
+</body>
+</html>
