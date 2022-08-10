@@ -84,9 +84,10 @@ getNextQuestion = () => {
     questionCounter++;
     questionCounterText.innerHTML = `${questionCounter-1}/${maxQuestions}`;
     
-    const questionIndex = Math.floor(Math.random()*gameQuestions.length);
+    const questionIndex = Math.floor(Math.random() * availibleQuestions.length);
     currentQuestion = availibleQuestions[questionIndex];
     questions.innerHTML = currentQuestion.question;
+
 
     choices.forEach(choice => {
         const number = choice.dataset['number'];
@@ -120,7 +121,7 @@ choices.forEach(choice => {
 });
 
 
-let timeSecond = 60;
+let timeSecond = 120;
 let wrongAnswer = -10;
 const activeTimer = document.getElementById('hud-active-timer');
 
@@ -129,11 +130,16 @@ let countDown = setInterval (()=>{
     timeSecond--;
     activeTimer.innerHTML = timeSecond;
     if (timeSecond === 0){
-        window.alert('You are out of time');
+        window.alert('You are out of time. Try again!');
         clearInterval(countDown);
+        endGame();
     }
 }, 1000);
 
+
+endGame = () => {
+    window.location.assign('start.html');
+}
 
 
 scoreCounter = num => {

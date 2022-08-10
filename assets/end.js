@@ -17,7 +17,7 @@ username.addEventListener('keyup' , () => {
 
 saveHighScore = e => {
     e.preventDefault();
-    console.log('click');
+    window.alert('Score saved! Go to the High Scores page to see! ');
 
     const score = {
         score: mostRecentScore,
