@@ -13,20 +13,19 @@
     <div class="end-container">
         <div id="end-game">
             <h1>Congratulations! Your final score is:</h1>
-            <h2 id="final-score"></h2>
+            <h2 id="finalScore"></h2>
             <p id="score-total"></p>
         </div>
         <div>
             <form id="end-game-form">
-                <input id="input-text"
+                <input id="username"
                 type="text"
                 name="username"
                 placeholder="username">
-
             <button
              type="submit" 
              id="save-score-btn"
-             onclick="saveScore(event)">
+             onclick="saveHighScore(event)">
              Save
             </button>
             <button type="submit" id="play-again-btn">

@@ -13,23 +13,6 @@ let availibleQuestions = []
 const correctAnswer = 10
 const maxQuestions = 5
 
-let timeSecond = 100;
-const activeTimer = document.getElementById('hud-active-timer');
-
-activeTimer
-
-const countDown = setInterval (()=>{
-    timeSecond--;
-    activeTimer.innerHTML = timeSecond;
-    if (timeSecond === 0){
-        window.alert('You are out of time');
-        clearInterval(countDown);
-        
-    }
-}, 1000);
-
-   
-
 let gameQuestions = [ 
     {
         question: 'What is NOT a data type in JavaScript?',
@@ -124,9 +107,6 @@ choices.forEach(choice => {
             scoreCounter(correctAnswer);
         };
 
-        if (rightOrWrong === 'incorrect') {
-            timeSecond-5;
-        };
 
         selectedChoice.classList.add(rightOrWrong);
 
@@ -138,6 +118,23 @@ choices.forEach(choice => {
     
     });
 });
+
+
+let timeSecond = 60;
+let wrongAnswer = -10;
+const activeTimer = document.getElementById('hud-active-timer');
+
+
+let countDown = setInterval (()=>{
+    timeSecond--;
+    activeTimer.innerHTML = timeSecond;
+    if (timeSecond === 0){
+        window.alert('You are out of time');
+        clearInterval(countDown);
+    }
+}, 1000);
+
+
 
 scoreCounter = num => {
     score += num;
