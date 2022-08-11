@@ -47,7 +47,7 @@ let gameQuestions = [
         answer: 4,
     },
     {
-        question: "What is an 'undfinded variable'?",
+        question: "What is an 'undefined variable'?",
         choice1: "Nothing, don't worry about it.",
         choice2: 'A variable that is used within a function',
         choice3: 'A variable that has not been assigned a value yet',
@@ -138,7 +138,7 @@ let countDown = setInterval (()=>{
 
 
 endGame = () => {
-    window.location.assign('start.html');
+    window.location.assign('index.html');
 }
 
 
