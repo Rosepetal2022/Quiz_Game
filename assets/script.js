@@ -121,7 +121,7 @@ choices.forEach(choice => {
 });
 
 
-let timeSecond = 120;
+let timeSecond = 60;
 let wrongAnswer = -10;
 const activeTimer = document.getElementById('hud-active-timer');
 

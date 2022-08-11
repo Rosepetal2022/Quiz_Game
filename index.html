@@ -10,53 +10,26 @@
 </head>
 
 <body>
-
     <header>
         <h1>JavaScript Fundamentals Quiz</h1>
-        <div id="hud">
-            <div id="hud-question">
-                <h1 id= "hud-text">Question</h1>
-                <p id= "hud-number"></p>
-            </div>
-            <div id="hud-score">
-                <h1 id= "hud-text">Your Score</h1>
-                <p id="hud-active-score"></p>
-            </div>
-            <div id="hud-timer">
-                <h1 id= "hud-text">Timer</h1>
-                <p id="hud-active-timer"></p>
-            </div>
-        </div>
-
     </header>
-
     <main class="page-content">
-       
-
-
-        <div class="container">
+        <div class="start-container">
             <div id="question-container" class="question-container">
-
-                <div id="questions">Question</div>
                 <div id="answer-button" class="btn-grid">
-                    <button class="btn" type="submit" data-number="1">Choice 1</button>
-                    <button class="btn" type="submit" data-number="2">Choice 2</button>
-                    <button class="btn" type="submit" data-number="3">Choice 3</button>
-                    <button class="btn" type="submit" data-number="4">Choice 4</button>
+                    <button class="btn" type="submit">
+                        <a href="game.html" id="start-btn">Start</a>
+                    </button>
+                    <button class="btn" type="submit">
+                        <a href="highscores.html" id="start-btn">High Scores</a>
+                    </button>
                 </div>
             </div>
         </div>
-
-
-
     </main>
-
     <footer>
         <h2>&copy;Created by Rachel Spears</h2>
     </footer>
-
-
-    <script src="assets/script.js"></script>
 </body>
 
 </html>
