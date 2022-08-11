@@ -12,4 +12,4 @@ A quiz to test a students basic knowledge of JavaScript and compare their unders
 ## website
 
 ## Screen Shot
-![This is an image](assets.screenshot.png)
+![This is an image](assets/screenshot.png)
