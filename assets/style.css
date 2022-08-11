@@ -51,6 +51,14 @@ footer {
     
 }
 
+#start-scores {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*main game style starts*/
+
 .container {
     width: 800px;
     max-width: 80%;
@@ -180,10 +188,7 @@ footer {
     color: white;
 }
 
-#start-scores {
-    text-decoration: none;
-    color: white;
-}
+
 
 /*high scores page styling starts*/
 
